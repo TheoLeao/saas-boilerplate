@@ -4,7 +4,7 @@ import { useAuthStore } from '@/stores/auth.store';
 export function AuthLayout() {
   const { user } = useAuthStore();
 
-  if (user) return <Navigate to="/dashboard" replace />;
+  if (user) return <Navigate to="/" replace />;
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-bg p-4">

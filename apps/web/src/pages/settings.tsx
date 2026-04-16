@@ -19,57 +19,54 @@ export function SettingsPage() {
     try {
       await api.patch('/users/me', form);
       await fetchUser();
-      toast.success('Profile updated');
-    } catch (err: any) {
-      toast.error(err.message || 'Update failed');
+      toast.success('Profil mis à jour');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Échec de la mise à jour';
+      toast.error(msg);
     } finally {
       setLoading(false);
     }
   };
 
-  const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) =>
-    setForm((prev) => ({ ...prev, [field]: e.target.value }));
+  const update =
+    (field: string) => (e: React.ChangeEvent<HTMLInputElement>) =>
+      setForm((prev) => ({ ...prev, [field]: e.target.value }));
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold">Settings</h1>
-        <p className="text-text-muted">Manage your account</p>
-      </div>
-
+    <div className="space-y-6 animate-fade-in">
       <Card>
         <CardHeader>
-          <CardTitle>Profile</CardTitle>
-          <CardDescription>Update your personal information</CardDescription>
+          <CardTitle>Profil</CardTitle>
+          <CardDescription>Informations personnelles</CardDescription>
         </CardHeader>
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <Input
               id="firstName"
-              label="First name"
+              label="Prénom"
               value={form.firstName}
               onChange={update('firstName')}
             />
             <Input
               id="lastName"
-              label="Last name"
+              label="Nom"
               value={form.lastName}
               onChange={update('lastName')}
             />
           </div>
           <Input label="Email" value={user?.email || ''} disabled />
           <Button onClick={handleSave} loading={loading}>
-            Save changes
+            Enregistrer
           </Button>
         </div>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle>Danger zone</CardTitle>
-          <CardDescription>Irreversible actions</CardDescription>
+          <CardTitle>Zone de danger</CardTitle>
+          <CardDescription>Actions irréversibles</CardDescription>
         </CardHeader>
-        <Button variant="danger">Delete account</Button>
+        <Button variant="danger">Supprimer le compte</Button>
       </Card>
     </div>
   );

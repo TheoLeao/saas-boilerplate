@@ -32,9 +32,11 @@ saas-boilerplate/
 │   │       └── common/         # Decorators (@Public, @CurrentUser)
 │   └── web/                    # Frontend React SPA
 │       └── src/
-│           ├── components/     # UI (Button, Input, Card) + Layout
-│           ├── routes/         # Pages (auth, dashboard, settings)
-│           ├── stores/         # Zustand stores
+│           ├── components/     # UI + layout (shell type VintedMoney)
+│           ├── pages/          # Écrans app (dashboard, settings, docs…)
+│           ├── config/         # Navigation + méta titres (nav.tsx)
+│           ├── routes/         # Auth hors shell (login, register)
+│           ├── stores/         # Zustand (auth, app shell)
 │           ├── lib/            # API client, cn() helper
 │           └── styles/         # Tailwind + design tokens
 ├── packages/

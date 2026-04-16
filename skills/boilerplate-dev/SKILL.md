@@ -12,7 +12,7 @@ description: Conventions du monorepo saas-boilerplate (Nest API, Vite web, scrip
 ## Structure à respecter
 
 - **API** : nouveaux domaines sous `apps/api/src/<domain>/` (module + controller + service), enregistrer dans `app.module.ts`.
-- **Web** : pages sous `apps/web/src/routes/`, composants sous `components/`, appels via `lib/api.ts`.
+- **Web** : pages sous `apps/web/src/pages/`, navigation dans `config/nav.tsx`, shell dans `components/layout/`, auth dans `routes/auth/`, appels via `lib/api.ts`.
 - **Auth** : routes publiques avec `@Public()` ; utilisateur courant avec `@CurrentUser('sub')`.
 
 ## Commandes utiles

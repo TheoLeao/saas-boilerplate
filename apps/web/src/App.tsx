@@ -1,10 +1,12 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router';
 import { AppLayout } from './components/layout/AppLayout';
 import { AuthLayout } from './components/layout/AuthLayout';
 import { LoginPage } from './routes/auth/LoginPage';
 import { RegisterPage } from './routes/auth/RegisterPage';
-import { DashboardPage } from './routes/dashboard/DashboardPage';
-import { SettingsPage } from './routes/settings/SettingsPage';
+import { DashboardPage } from './pages/dashboard';
+import { SettingsPage } from './pages/settings';
+import { DocsHubPage } from './pages/docs';
+import { SystemHealthPage } from './pages/system/health';
 import { useAuthStore } from './stores/auth.store';
 
 export function App() {
@@ -18,12 +20,14 @@ export function App() {
 
         <Route element={<ProtectedRoute />}>
           <Route element={<AppLayout />}>
-            <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
+            <Route index element={<DashboardPage />} />
+            <Route path="settings" element={<SettingsPage />} />
+            <Route path="docs" element={<DocsHubPage />} />
+            <Route path="system/health" element={<SystemHealthPage />} />
           </Route>
         </Route>
 
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
@@ -44,5 +48,3 @@ function ProtectedRoute() {
 
   return <Outlet />;
 }
-
-import { Outlet } from 'react-router';

@@ -3,7 +3,7 @@
 ## Monorepo
 
 - **`apps/api`** — API NestJS (Prisma, auth JWT, modules métier).
-- **`apps/web`** — SPA React + Vite (proxy `/api` vers l’API en dev).
+- **`apps/web`** — SPA React + Vite (proxy `/api` vers l’API en dev). Pages métier dans `src/pages/`, shell (sidebar + header + ⌘K) dans `src/components/layout/`, catalogue menu dans `src/config/nav.tsx`.
 - **`packages/shared-types`** — Types et enums partagés front/back.
 
 ## Flux de données
