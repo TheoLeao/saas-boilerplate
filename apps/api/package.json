@@ -1,0 +1,49 @@
+{
+  "name": "@app/api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "start": "node dist/main",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "clean": "rm -rf dist",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11",
+    "@nestjs/core": "^11",
+    "@nestjs/jwt": "^11",
+    "@nestjs/passport": "^11",
+    "@nestjs/platform-express": "^11",
+    "@nestjs/throttler": "^6",
+    "@prisma/client": "^6",
+    "bcrypt": "^5",
+    "class-transformer": "^0.5",
+    "class-validator": "^0.14",
+    "cookie-parser": "^1",
+    "passport": "^0.7",
+    "passport-jwt": "^4",
+    "reflect-metadata": "^0.2",
+    "rxjs": "^7",
+    "zod": "^3"
+  },
+  "optionalDependencies": {
+    "@theoleao/messaging": "*",
+    "@theoleao/stripe-helpers": "*"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11",
+    "@nestjs/schematics": "^11",
+    "@types/bcrypt": "^5",
+    "@types/cookie-parser": "^1",
+    "@types/express": "^5",
+    "@types/passport-jwt": "^4",
+    "prisma": "^6",
+    "typescript": "^5"
+  }
+}
