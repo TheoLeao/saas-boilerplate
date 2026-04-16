@@ -42,6 +42,10 @@ saas-boilerplate/
 ├── deploy/
 │   ├── deploy.sh               # Script rsync + PM2
 │   └── nginx.conf              # Config Nginx reverse proxy
+├── docs/                       # Doc humaine (architecture, runbooks, ADR)
+├── skills/                     # Skills agents (SKILL.md + registry.yml)
+├── scripts/
+│   └── devctl.sh               # start/stop/restart front | back | app
 ├── turbo.json
 └── .env.example
 ```
@@ -78,6 +82,17 @@ npm run dev
 | `npm run db:migrate` | Crée une migration |
 | `npm run db:studio` | Ouvre Prisma Studio |
 | `npm run deploy` | Déploie sur le VPS |
+| `npm run front:start` / `front:stop` / `front:restart` | Vite en arrière-plan (logs `.run/web.log`) |
+| `npm run back:start` / `back:stop` / `back:restart` | Nest en arrière-plan (logs `.run/api.log`) |
+| `npm run app:start` / `app:stop` / `app:restart` | API puis web (même dossier `.run/`) |
+| `npm run front:status` / `back:status` / `app:status` | Affiche si les PID sont actifs |
+
+### Documentation et skills IA
+
+- **`docs/`** — index : [`docs/README.md`](./docs/README.md) (architecture, runbooks, ADR).
+- **`skills/`** — skills agents : [`skills/README.md`](./skills/README.md) et `skills/registry.yml`.
+
+Pour la convention détaillée : [`docs/architecture/ai-skills.md`](./docs/architecture/ai-skills.md) et [`docs/architecture/documentation.md`](./docs/architecture/documentation.md).
 
 ## Nouveau projet à partir de ce boilerplate
 

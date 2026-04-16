@@ -18,6 +18,18 @@
     "db:push": "npm run db:push --workspace=apps/api",
     "db:migrate": "npm run db:migrate --workspace=apps/api",
     "db:studio": "npm run db:studio --workspace=apps/api",
+    "front:start": "bash scripts/devctl.sh front start",
+    "front:stop": "bash scripts/devctl.sh front stop",
+    "front:restart": "bash scripts/devctl.sh front restart",
+    "front:status": "bash scripts/devctl.sh front status",
+    "back:start": "bash scripts/devctl.sh back start",
+    "back:stop": "bash scripts/devctl.sh back stop",
+    "back:restart": "bash scripts/devctl.sh back restart",
+    "back:status": "bash scripts/devctl.sh back status",
+    "app:start": "bash scripts/devctl.sh app start",
+    "app:stop": "bash scripts/devctl.sh app stop",
+    "app:restart": "bash scripts/devctl.sh app restart",
+    "app:status": "bash scripts/devctl.sh app status",
     "deploy": "bash deploy/deploy.sh"
   },
   "devDependencies": {

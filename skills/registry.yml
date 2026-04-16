@@ -1,0 +1,16 @@
+# Registre des skills IA — format stable pour scripts / outils
+version: 1
+skills:
+  - id: boilerplate-dev
+    name: Développement sur le boilerplate SaaS
+    path: skills/boilerplate-dev/SKILL.md
+    triggers:
+      - boilerplate
+      - monorepo
+      - apps/api
+      - apps/web
+
+  - id: template-skill
+    name: "(Modèle — ne pas invoquer tel quel)"
+    path: skills/_template/SKILL.md
+    triggers: []

@@ -10,3 +10,5 @@ coverage/
 .next/
 .cache/
 apps/api/prisma/*.db
+.run/
+apps/web/dist-node/
